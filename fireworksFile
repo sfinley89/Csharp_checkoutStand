@@ -1,0 +1,25 @@
+//declare variables
+            double purchasePrice = -1, discountPrice = 0;
+
+            Console.WriteLine("Welcome to my fireworks stand checkout!");
+
+            while (true) //infinate loop until the user enters -1 to quit
+            {
+                Console.Write("Please enter the price of the item, -1 to quit: ");
+                purchasePrice = Convert.ToDouble(Console.ReadLine());
+
+                if (purchasePrice >= 100) 
+                {
+                    discountPrice = purchasePrice * .85; 
+                }
+
+                else if (purchasePrice == -1)
+                {
+                    Console.WriteLine("Thanks for shopping.");
+                    break;
+
+                }
+                else
+                    discountPrice = purchasePrice;
+                Console.WriteLine("Your purchase price is " + purchasePrice + " and your discount price is " + discountPrice);
+            }
