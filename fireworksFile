@@ -1,16 +1,18 @@
 //declare variables
-            double purchasePrice = -1, discountPrice = 0;
+            double purchasePrice = -1, discountPrice = 0, tenPercentDiscount;
 
-            Console.WriteLine("Welcome to my fireworks stand checkout!");
+            Console.WriteLine("Welcome to my fireworks stand checkout! If you spend over $50 you will recieve a 10% discount!!");
 
             while (true) //infinate loop until the user enters -1 to quit
             {
                 Console.Write("Please enter the price of the item, -1 to quit: ");
                 purchasePrice = Convert.ToDouble(Console.ReadLine());
 
-                if (purchasePrice >= 100) 
+                if (purchasePrice >= 50)
                 {
-                    discountPrice = purchasePrice * .85; 
+                    tenPercentDiscount = purchasePrice * .10;
+                    discountPrice = purchasePrice - tenPercentDiscount;
+                    Console.WriteLine("Your origional purchase price is $" + purchasePrice + ". Since the purchase price is over $50 you will save $" + tenPercentDiscount + " and the new discount price is $" + discountPrice);
                 }
 
                 else if (purchasePrice == -1)
@@ -20,6 +22,5 @@
 
                 }
                 else
-                    discountPrice = purchasePrice;
-                Console.WriteLine("Your purchase price is " + purchasePrice + " and your discount price is " + discountPrice);
+                Console.WriteLine("Your purchase price is $" + purchasePrice + ". Since the purchase price was under $50 you dont recieve a disount.");
             }
